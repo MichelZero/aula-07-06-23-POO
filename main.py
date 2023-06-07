@@ -16,7 +16,7 @@ altura = float(input("informe a altura: "))
 #
 calc1.setPeso(peso)
 calc1.setAltura(altura)
-#print(calc1.IMC())
+print(calc1.IMC())
 
 # https://endocrinologiacuritiba.com.br/wp-content/uploads/2012/02/tabela_imc.jpg
 if calc1.IMC() < 18.5:
