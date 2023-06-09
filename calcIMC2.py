@@ -16,24 +16,29 @@ class CalculadoraIMC():
     self.peso = valor
     
   def IMC(self):
+    # dividindo a altura por 100 para converter para metros
+    self.altura = self.altura / 100
+    # calculando o IMC
     resultado = self.peso / self.altura ** 2
-    # arredondando o resultado para duas casas decimais.
-    # chamando o método classificacao() dentro do método IMC()
-    return classificacao(self)
+    # retornando o resultado com duas casas decimais
+    return round(resultado, 2)
   
   # criando o método para retornar a classificação do IMC.
   def classificacao(self):
-    if self.IMC() < 18.5:
+    # chamando o método IMC() para calcular o IMC
+    IMC = self.IMC()
+    # retornando a classificação
+    if IMC < 18.5:
       return "abaixo do peso normal!"
-    elif self.IMC() >= 18.5 and self.IMC() <= 24.9:
+    elif IMC >= 18.5 and IMC <= 24.9:
       return "peso normal!"
-    elif self.IMC() >= 25.0 and self.IMC() <= 29.9:
+    elif IMC >= 25.0 and IMC <= 29.9:
       return "excesso de peso!"
-    elif self.IMC() >= 30.0 and self.IMC() <= 34.9:
+    elif IMC >= 30.0 and IMC <= 34.9:
       return "obesidade classe I"
-    elif self.IMC() >= 35.0 and self.IMC() <= 39.9:
+    elif IMC >= 35.0 and IMC <= 39.9:
       return "obesidade classe II"
-    elif self.IMC() >= 40 :
+    elif IMC >= 40 :
       return "obesidade classe III"
     else:
       return "dados errados"
